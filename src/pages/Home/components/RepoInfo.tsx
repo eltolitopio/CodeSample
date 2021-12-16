@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
 import {AxiosError, AxiosResponse} from "axios";
@@ -17,7 +17,7 @@ interface LoadingProps {
   text: string;
 }
 
-const Loading = function ({ text }: LoadingProps) {
+export const Loading = function ({ text }: LoadingProps) {
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <img src={spinner} alt="*" style={{ width: "24px" }} />

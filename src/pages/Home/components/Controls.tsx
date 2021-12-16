@@ -11,7 +11,7 @@ import uaFlag from "../../../assets/images/ua.png";
 import enFlag from "../../../assets/images/en.png";
 
 interface ControlsProps {
-  repositoriesNames: Array<string>;
+  repositoriesNames: Array<string>,
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -27,10 +27,10 @@ export const Controls = function ({
     if (counter < repositoriesNames?.length - 1)
       setCounter((prevCounter) => prevCounter + 1);
     else setCounter(0);
-  }, [repositoriesNames, counter]);
+  }, [repositoriesNames, counter, setCounter]);
   const prevRepo = useCallback(() => {
     if (counter >= 1) setCounter((prevCounter) => prevCounter - 1);
-  }, [counter]);
+  }, [counter, setCounter]);
 
   const changeLang = (lang: string) => i18n.changeLanguage(lang);
 
