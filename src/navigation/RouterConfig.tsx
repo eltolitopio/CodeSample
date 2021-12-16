@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RoutesList from "./RoutesList";
 import { NotFound } from "./RoutesWithError";
 
+// Flexible router, all routes info can be easily edited, all routes info stored in ./RoutesList.ts
 export const RouterConfig = function () {
   return (
     <BrowserRouter>

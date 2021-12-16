@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# TestTask application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using typescript template. 
+- We have a frontend built in react, which receives a list of repositories from the server and displays information about them to us. 
+- Styled-components are used for styles, where there is a little css, it is written simply in the style attribute. 
+- The server is written in typescript, consists of 1 file, simulates the behavior when we query the database to get a list of repositories, for example, it returns a hardcoded list of repositories.
+- project has tsconfig and esling config.
 
-## Available Scripts
+## NPM Scripts
 
-In the project directory, you can run:
+There are multiple scripts to run:
 
-### `npm start`
+Run server
+```
+  "start-server": "ts-node --project tsconfig.json ./server/index.ts",
+```
+Start react application
+```
+  "start": "react-scripts start",
+```
+Build react application
+```
+  "build": "react-scripts build",
+```
+Test react application. Will launch the testing menu, if we enter the character "a", we will run all our tests written with the jest framework. Tests are saved in the src / __ tests__ folder.
+```
+  "test": "react-scripts test",
+```
+Eject react application. Auto generated, unused in project.
+```
+  "eject": "react-scripts eject",
+```
+Prettier will help to maintain the code within some formatting rules like indentation, double or single quotes when using string, etc.
+```
+  "prettier": "npx prettier --write ."
+```
+Checks our code against lint rules specific to React and JSX for TSLint.
+```
+  "lint": "eslint --fix --ext .js,.jsx,ts,tsx ."
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
