@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
+import {AxiosError, AxiosResponse} from "axios";
 
 // API
 import { getRepoByName } from "../../../api";
@@ -29,8 +30,14 @@ interface RepoProps {
   repo: string;
 }
 
+interface DataInterface {
+    full_name: string,
+    description: string,
+    stargazers_count: number
+}
+
 export const RepoInfo = function ({ repo }: RepoProps) {
-  const result: any = useQuery(
+  const {isError, data, isFetching, error} = useQuery<AxiosResponse<DataInterface>, AxiosError, DataInterface>(
     ["getRepoByName", repo],
     () => getRepoByName(repo),
     { retry: false }
@@ -38,11 +45,11 @@ export const RepoInfo = function ({ repo }: RepoProps) {
 
   const { t } = useTranslation();
 
-  if (result.isError || typeof result?.data === "string") {
+  if (isError || typeof data === "string") {
     return (
       <Typography size={1.5}>
         Error!
-        {result?.error?.message}
+        {error?.message}
       </Typography>
     );
   }
@@ -51,21 +58,21 @@ export const RepoInfo = function ({ repo }: RepoProps) {
     <div style={{ maxWidth: "50%" }}>
       <Typography size={1.5}>{t("SELECTED_REPO_INFO_TITLE")}: </Typography>
 
-      {result?.isFetching ? (
+      {isFetching ? (
         <Loading text={t("LOADING")} />
       ) : (
         <div style={{ border: "1px solid gray", padding: "16px" }}>
           <Typography size={1.25}>
-            <b>{t("SELECTED_REPO_INFO.TITLE")}:</b> {result?.data?.full_name}
+            <b>{t("SELECTED_REPO_INFO.TITLE")}:</b> {data?.full_name}
           </Typography>{" "}
           <br />
           <Typography size={1.25}>
             <b>{t("SELECTED_REPO_INFO.DESCRIPTION")}:</b>{" "}
-            {result?.data?.description}
+            {data?.description}
           </Typography>
           <div style={{ display: "flex", alignItems: "center" }}>
             <img src={star} alt="★" style={{ width: "24px" }} />{" "}
-            {result?.data?.stargazers_count}
+            {data?.stargazers_count}
           </div>
         </div>
       )}
