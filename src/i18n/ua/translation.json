@@ -1,13 +1,13 @@
 {
-	"REPO_LIST_TITLE": "Список репозиторіїв",
-	"BUTTONS": {
-		"NEXT": "Наступний",
-		"PREV": "Попередній"
-	},
-	"SELECTED_REPO_INFO_TITLE": "Інформація про обраний репозиторій",
-	"SELECTED_REPO_INFO": {
-		"TITLE": "Назва",
-		"DESCRIPTION": "Опис"
-	},
-	"LOADING": "Отримуємо оновлену інформацію про репозиторій..."
+  "REPO_LIST_TITLE": "Список репозиторіїв",
+  "BUTTONS": {
+    "NEXT": "Наступний",
+    "PREV": "Попередній"
+  },
+  "SELECTED_REPO_INFO_TITLE": "Інформація про обраний репозиторій",
+  "SELECTED_REPO_INFO": {
+    "TITLE": "Назва",
+    "DESCRIPTION": "Опис"
+  },
+  "LOADING": "Отримуємо оновлену інформацію про репозиторій..."
 }

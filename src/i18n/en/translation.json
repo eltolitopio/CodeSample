@@ -1,13 +1,13 @@
 {
-	"REPO_LIST_TITLE": "Repositories list",
-	"BUTTONS": {
-		"NEXT": "Next",
-		"PREV": "Prev"
-	},
-	"SELECTED_REPO_INFO_TITLE": "Selected repository info",
-	"SELECTED_REPO_INFO": {
-		"TITLE": "Title",
-		"DESCRIPTION": "Description"
-	},
-	"LOADING": "Retrieving updated repo information..."
+  "REPO_LIST_TITLE": "Repositories list",
+  "BUTTONS": {
+    "NEXT": "Next",
+    "PREV": "Prev"
+  },
+  "SELECTED_REPO_INFO_TITLE": "Selected repository info",
+  "SELECTED_REPO_INFO": {
+    "TITLE": "Title",
+    "DESCRIPTION": "Description"
+  },
+  "LOADING": "Retrieving updated repo information..."
 }

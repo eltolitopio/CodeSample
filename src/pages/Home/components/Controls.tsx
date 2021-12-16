@@ -11,7 +11,7 @@ import uaFlag from "../../../assets/images/ua.png";
 import enFlag from "../../../assets/images/en.png";
 
 interface ControlsProps {
-  repositoriesNames: Array<string>,
+  repositoriesNames: Array<string>;
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
 }

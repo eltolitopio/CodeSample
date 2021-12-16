@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
-import {AxiosError, AxiosResponse} from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 
 // API
 import { getRepoByName } from "../../../api";
@@ -31,17 +31,17 @@ interface RepoProps {
 }
 
 interface DataInterface {
-    full_name: string,
-    description: string,
-    stargazers_count: number
+  full_name: string;
+  description: string;
+  stargazers_count: number;
 }
 
 export const RepoInfo = function ({ repo }: RepoProps) {
-  const {isError, data, isFetching, error} = useQuery<AxiosResponse<DataInterface>, AxiosError, DataInterface>(
-    ["getRepoByName", repo],
-    () => getRepoByName(repo),
-    { retry: false }
-  );
+  const { isError, data, isFetching, error } = useQuery<
+    AxiosResponse<DataInterface>,
+    AxiosError,
+    DataInterface
+  >(["getRepoByName", repo], () => getRepoByName(repo), { retry: false });
 
   const { t } = useTranslation();
 
@@ -67,8 +67,7 @@ export const RepoInfo = function ({ repo }: RepoProps) {
           </Typography>{" "}
           <br />
           <Typography size={1.25}>
-            <b>{t("SELECTED_REPO_INFO.DESCRIPTION")}:</b>{" "}
-            {data?.description}
+            <b>{t("SELECTED_REPO_INFO.DESCRIPTION")}:</b> {data?.description}
           </Typography>
           <div style={{ display: "flex", alignItems: "center" }}>
             <img src={star} alt="★" style={{ width: "24px" }} />{" "}
