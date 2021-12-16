@@ -1,4 +1,4 @@
-# TestTask application
+# Code sample application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using typescript template. 
 - We have a frontend built in react, which receives a list of repositories from the server and displays information about them to us. 
